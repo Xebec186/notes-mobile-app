@@ -1,10 +1,25 @@
 import { useState } from "react";
 import { Pressable, Text, StyleSheet, TextInput, View } from "react-native";
 
-function NoteInput() {
+function NoteInput({ onSave }) {
   const [enteredText, setEnteredText] = useState("");
 
   const textCount = enteredText.length;
+
+  function saveNoteHandler() {
+    if (enteredText.trim() === "") return;
+
+    onSave((prevNotes) => [
+      ...prevNotes,
+      {
+        content: enteredText,
+        id: Date.now().toString(36) + Math.random().toString(36).slice(2),
+        timestamp: new Date().toISOString(),
+      },
+    ]);
+
+    setEnteredText("");
+  }
 
   return (
     <View style={styles.container}>
@@ -21,7 +36,7 @@ function NoteInput() {
       />
       <View style={styles.buttonContainer}>
         <Text style={styles.textInputCount}>{textCount}/200</Text>
-        <Pressable style={styles.saveButton}>
+        <Pressable style={styles.saveButton} onPress={saveNoteHandler}>
           <Text style={styles.saveButtonText}>Save Note</Text>
         </Pressable>
       </View>
