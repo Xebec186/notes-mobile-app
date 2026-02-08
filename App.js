@@ -1,8 +1,9 @@
-import { StyleSheet, View } from "react-native";
+import { useState } from "react";
+import { StyleSheet, Text, View } from "react-native";
 import Header from "./components/Header";
 import NoteInput from "./components/NoteInput";
 import NotesList from "./components/NotesList";
-import { useState } from "react";
+import NoNote from "./components/NoNote";
 
 export default function App() {
   const [notes, setNotes] = useState([]);
@@ -12,7 +13,11 @@ export default function App() {
       <Header />
       <NoteInput onSave={setNotes} />
       <View style={styles.viewBorderBottom}></View>
-      <NotesList notes={notes} onDelete={setNotes} />
+      {notes.length === 0 ? (
+        <NoNote />
+      ) : (
+        <NotesList notes={notes} onDelete={setNotes} />
+      )}
     </View>
   );
 }
