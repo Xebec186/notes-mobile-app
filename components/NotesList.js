@@ -15,6 +15,7 @@ function NotesList({ notes }) {
     <View style={styles.container}>
       <Text style={styles.heading}>Saved Notes</Text>
       <FlatList
+        alwaysBounceVertical={false}
         data={notes}
         renderItem={({ item }) => (
           <View style={styles.noteCard}>
@@ -33,11 +34,10 @@ function NotesList({ notes }) {
 export default NotesList;
 
 const styles = StyleSheet.create({
-  container: { paddingHorizontal: 20, paddingVertical: 15 },
+  container: { paddingHorizontal: 20, paddingVertical: 15, flex: 1 },
   heading: { color: "#94A3B8", fontWeight: 500, fontSize: 16 },
   noteListContainer: {
     marginTop: 15,
-    gap: 10,
   },
   noteCard: {
     backgroundColor: "#1E293B",
