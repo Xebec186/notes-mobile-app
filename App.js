@@ -12,7 +12,7 @@ export default function App() {
       <Header />
       <NoteInput onSave={setNotes} />
       <View style={styles.viewBorderBottom}></View>
-      <NotesList notes={notes} />
+      <NotesList notes={notes} onDelete={setNotes} />
     </View>
   );
 }
