@@ -41,7 +41,7 @@ A simple and elegant note-taking application built with React Native and Expo. Q
 
 3. Start the development server:
    ```bash
-   npm expo start
+   npx expo start
    ```
 4. Scan the QR code using the Expo Go app on your device or run it on an emulator.
 
