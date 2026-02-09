@@ -2,6 +2,10 @@
 
 A simple and elegant note-taking application built with React Native and Expo. Quickly jot down your thoughts and ideas with an intuitive dark-themed interface.
 
+## UI Screenshot
+
+![Quick Notes UI](./assets/ui-screenshot.jpeg)
+
 ## Features
 
 - **Quick Note Creation**: Write notes with a user-friendly text input interface
