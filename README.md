@@ -4,7 +4,7 @@ A simple and elegant note-taking application built with React Native and Expo. Q
 
 ## UI Screenshot
 
-![Quick Notes UI](./assets/ui-screenshot.jpeg)
+<img src="./assets/ui-screenshot.jpeg" alt="Quick Notes UI" width="200" />
 
 ## Features
 
